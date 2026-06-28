@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Amma 🌸</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="hearts-bg" id="heartsContainer"></div>
+
+<!-- ════════ HERO ════════ -->
+<div class="hero">
+  <div class="sparkles">✨💖✨</div>
+  <div class="subtitle">A little love page, just for you</div>
+  <h1>Happy Birthday,<br>Amma 🌸</h1>
+  <div class="age-badge">June 28 · Turning 50 · Always Loved</div>
+  <p class="tagline">Made with all my heart, from your chinnodu 💕</p>
+</div>
+
+<!-- ════════ SECTIONS — revealed one by one ════════ -->
+<div id="storyContainer">
+
+  <!-- 1. GIFT -->
+  <div class="story-block" data-index="0">
+    <div class="section">
+      <div class="section-title">🎁 If I Could Give You One Gift...</div>
+      <div class="card gift-card">
+        <div class="gift-text">
+          <p>If I could give you one birthday gift...</p>
+          <p>it wouldn't be flowers.</p>
+          <p>it wouldn't be jewelry.</p>
+          <p>it wouldn't even be the whole world.</p>
+          <br>
+          <p>I'd give you something you've forgotten to give yourself...</p>
+          <p class="gift-highlight">rest.</p>
+          <p class="gift-highlight">A full night's sleep.</p>
+          <p class="gift-highlight">A peaceful mind.</p>
+          <p class="gift-highlight">The freedom to laugh without worrying about me.</p>
+          <p class="gift-highlight">The permission to love yourself the same way you've loved me for twenty-three years.</p>
+          <br>
+          <p>Because Amma...</p>
+          <p class="gift-finale">the greatest gift you can ever give me is a healthy, happy you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MAP -->
+  <div class="story-block" data-index="1">
+    <div class="section">
+      <div class="section-title">🌍 Map of Love</div>
+      <div class="card">
+        <div id="map"></div>
+        <p class="map-quote">
+          "No matter how many miles are between us —<br>
+          you're always the closest person to my heart."
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. TIMELINE -->
+  <div class="story-block" data-index="2">
+    <div class="section">
+      <div class="section-title">📖 Our Timeline Together</div>
+      <div class="card">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2003 🌟</div>
+            <div class="tl-text">The day my whole world began. You became my mother. And from that day on, every decision you made was about giving me a better life.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2008 🛵</div>
+            <div class="tl-text">You joined me at New Central School. I remember sitting in front of your scooty and you dropping me to school. I remember falling asleep while riding and everyone warned you about it. I want to be small like that again and be with you.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2018 📚</div>
+            <div class="tl-text">I left home for the first time. FIITJEE — Visakhapatnam. You let me go, even when it hurt.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2020 🏠</div>
+            <div class="tl-text">Went to JNTUK, but missed home and changed my counselling to JNTUV. Got lucky and stayed with you for 4 more years. Those years were a gift I didn't know I needed.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2024 ✈️</div>
+            <div class="tl-text">You did something only the bravest mothers can do. You let your only daughter fly across the world. You gave me your courage... your trust... and almost every last penny you had. Today I stand here because you believed I could.</div>
+          </div>
+          <div class="tl-item" style="margin-bottom:0">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2026 · Today ❤️</div>
+            <div class="tl-text">Now... I want our roles to slowly change. You spent twenty-three years worrying about me. It's my turn. Let me worry about you. Let me take care of you. Let me become your safe place the way you have always been mine.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. GARDEN -->
+  <div class="story-block" data-index="3">
+    <div class="section">
+      <div class="section-title">🌸 Garden of Thanks</div>
+      <div class="card">
+        <p class="garden-hint">Click each flower to make it bloom 🌿</p>
+        <div class="garden-grid" id="gardenGrid"></div>
+        <div class="garden-complete" id="gardenComplete">🌺 Your garden is full of love, Amma! 🌺</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. PROMISES -->
+  <div class="story-block" data-index="4">
+    <div class="section">
+      <div class="section-title">🤝 Things I Promise You</div>
+      <div class="card promises-card">
+        <div class="promises-list" id="promisesList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. 23 THINGS -->
+  <div class="story-block" data-index="5">
+    <div class="section">
+      <div class="section-title">💖 23 Things I Love About You</div>
+      <div class="card love-list-card">
+        <p class="love-list-intro">On your birthday, let me tell you 23 things I love about you — one for each year I have known you.</p>
+        <ol class="love-list" id="loveList"></ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. ONE LAST THING -->
+  <div class="story-block" data-index="6">
+    <div class="section">
+      <div class="section-title">💛 One Last Thing...</div>
+      <div class="card last-thing-card">
+        <div class="last-thing-photo-bg"></div>
+        <div class="last-thing-text">
+          <p>Amma...</p>
+          <p>For twenty-three years...</p>
+          <p>you have loved me enough for the both of us.</p>
+          <p>Now I have only one request.</p>
+          <p class="last-thing-highlight">Love yourself, too.</p>
+          <br>
+          <p>Sleep well.</p>
+          <p>Eat on time.</p>
+          <p>Laugh more.</p>
+          <p>Buy things for yourself without feeling guilty.</p>
+          <p>Make friends.</p>
+          <p>Start new hobbies.</p>
+          <p>Celebrate yourself.</p>
+          <br>
+          <p>Because the little girl you raised...</p>
+          <p>has grown up.</p>
+          <p>She'll be okay.</p>
+          <p>She'll work hard.</p>
+          <p>She'll make you proud.</p>
+          <p>And one day...</p>
+          <p>she'll take care of you the way you've always taken care of her.</p>
+          <br>
+          <p class="last-thing-finale">I love you beyond words, Amma.</p>
+          <p class="last-thing-finale">Happy 50th Birthday. ❤️</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end storyContainer -->
+
+<!-- ════════ REVEAL BUTTON AREA ════════ -->
+<div class="reveal-area" id="revealArea">
+  <button class="reveal-btn" id="revealBtn">There is more love waiting below. 🌸</button>
+</div>
+
+<!-- ════════ SURPRISE BUTTON (appears at the very end) ════════ -->
+<div class="section" style="text-align:center;padding-bottom:20px;display:none;position:relative;z-index:1;" id="surpriseBtnWrap">
+  <button class="surprise-btn" id="surpriseBtn">One Last Surprise 🎁</button>
+</div>
+
+<!-- ════════ FOOTER (appears at end) ════════ -->
+<footer class="footer" id="siteFooter" style="display:none;">
+  <p>Made with every bit of love I have 💖</p>
+  <div class="sig">— Yoshi thalli 🌸</div>
+</footer>
+
+<!-- ════════ SURPRISE OVERLAY ════════ -->
+<div class="surprise-overlay" id="surpriseOverlay">
+  <div class="surprise-content">
+    <p class="surprise-line1" id="surpriseLine1">
+      "If I had to choose my mother in every lifetime...<br>I'd choose you. Again. Every single time."
+    </p>
+    <p class="surprise-line2" id="surpriseLine2">
+      "Thank you for giving me a life so beautiful that my greatest wish today is simply for you to finally live yours."
+    </p>
+    <button class="surprise-close" id="surpriseClose">Close ✕</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
